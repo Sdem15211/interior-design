@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
-import { Bebas_Neue, Inter } from "next/font/google";
+import { Bebas_Neue, Inter, Roboto_Condensed } from "next/font/google";
 import "./globals.css";
 import { HeaderComponent } from "@/components/header";
+
+const roboto = Roboto_Condensed({
+  subsets: ["latin"],
+  weight: ["300", "400", "500"],
+});
 
 export const metadata: Metadata = {
   title: "interior-design",
@@ -15,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-black">
+      <body className={`bg-black ${roboto.className}`}>
         <HeaderComponent />
         {children}
       </body>

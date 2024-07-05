@@ -17,7 +17,7 @@ export const HeaderComponent = () => {
           Homín
         </Link>
         <ul
-          className={`flex flex-col duration-300 sm:flex-row absolute bg-black right-0 w-screen h-screen sm:h-fit sm:w-fit sm:top-0 sm:relative sm:bg-transparent gap-6 justify-center items-center ${
+          className={`flex flex-col duration-500 ease-out sm:flex-row absolute bg-black right-0 w-screen h-screen sm:h-fit sm:w-fit sm:top-0 sm:relative sm:bg-transparent gap-6 justify-center items-center ${
             showMenu ? "top-0" : "-top-[100vh]"
           }`}
         >
