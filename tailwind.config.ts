@@ -1,25 +1,25 @@
-import type { Config } from "tailwindcss";
+const {
+  default: flattenColorPalette,
+} = require("tailwindcss/lib/util/flattenColorPalette");
 
-const config: Config = {
+/** @type {import('tailwindcss').Config} */
+module.exports = {
   content: [
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./animation/**/*.{js,ts,jsx,tsx,mdx}",
     "./public/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: "class",
   theme: {
     extend: {
-      backgroundImage: {},
-      gridTemplateColumns: {},
       fontFamily: {
         bebas: ["Bebas Neue", "sans-serif"],
       },
-      inset: {},
-      padding: {},
-      height: {},
-      margin: {},
-      borderRadius: {},
       fontSize: {
         sm: "clamp(0.8rem, 0.17vw + 0.76rem, 0.89rem)",
         base: "clamp(1.1rem, 0.34vw + 0.91rem, 1.19rem)",
@@ -31,11 +31,18 @@ const config: Config = {
         "5xl": "clamp(3.81rem, 5.18vw + 2.52rem, 6.66rem)",
         "6xl": "clamp(4.77rem, 7.48vw + 2.9rem, 8.88rem)",
       },
-      colors: {},
-      width: {},
-      gap: {},
     },
   },
-  plugins: [],
+  plugins: [addVariablesForColors],
 };
-export default config;
+
+function addVariablesForColors({ addBase, theme }: any) {
+  let allColors = flattenColorPalette(theme("colors"));
+  let newVars = Object.fromEntries(
+    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+  );
+
+  addBase({
+    ":root": newVars,
+  });
+}

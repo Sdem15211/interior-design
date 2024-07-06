@@ -1,11 +1,12 @@
 import Image from "next/image";
 import React from "react";
+import { TextGenerateEffect } from "./ui/text-generate-effect";
 
 export const Hero = () => {
   return (
     <section
       id="section"
-      className="h-screen py-6 sm:py-24 max-h-[1120px] sm:max-h-screen relative flex justify-center items-center"
+      className="bg-black h-screen py-6 sm:py-24 max-h-[1120px] sm:max-h-screen relative flex justify-center items-center"
     >
       <div id="container" className="w-full h-full sm:px-24 px-6">
         <Image
@@ -19,10 +20,14 @@ export const Hero = () => {
             Ontdek
           </button>
           <div className="flex flex-col ">
+            {/* <TextGenerateEffect
+              words="Meubilair voor uw thuis"
+              className="font-bold text-4xl leading-none font-bebas"
+            /> */}
             <h1 className="font-bold text-4xl text-white leading-none font-bebas">
-              Mobilair voor uw thuis
+              Meubilair voor uw thuis
             </h1>
-            <p className="text-white text-lg">
+            <p className="text-white text-base">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
             </p>
           </div>

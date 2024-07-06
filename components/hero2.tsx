@@ -1,4 +1,5 @@
 import React from "react";
+import { TextGenerateEffect } from "./ui/text-generate-effect";
 
 export const Hero2 = () => {
   return (
@@ -9,6 +10,10 @@ export const Hero2 = () => {
       <div id="container" className=" px-6 sm:px-24 w-full h-full">
         <div className="flex xl:flex-row gap-12 xl:gap-64 flex-col h-full justify-center xl:items-center">
           <div className="flex flex-col h-full sm:justify-center xl:gap-12 xl:text-center">
+            {/* <TextGenerateEffect
+              words="Homin meubelen voor comfort in het leven"
+              className="text-black"
+            /> */}
             <h2 className="text-xl uppercase font-bebas">
               Homín meubelen voor comfort in het leven
             </h2>
