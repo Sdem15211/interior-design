@@ -1,8 +1,8 @@
 import { Bigname } from "@/components/Bigname";
+import { Expertise } from "@/components/Expertise";
 import { Imgslider } from "@/components/Imgslider";
 import { Hero } from "@/components/hero";
 import { Hero2 } from "@/components/hero2";
-import Image from "next/image";
 
 export default function Home() {
   return (
@@ -10,7 +10,8 @@ export default function Home() {
       <Hero />
       <Hero2 />
       <Bigname />
-      <Imgslider />
+      {/* <Imgslider /> */}
+      <Expertise />
     </main>
   );
 }

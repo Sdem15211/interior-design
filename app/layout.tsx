@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Bebas_Neue, Inter, Roboto_Condensed } from "next/font/google";
 import "./globals.css";
 import { HeaderComponent } from "@/components/header";
+import FooterComponent from "@/components/Layout/Footer";
 
 const roboto = Roboto_Condensed({
   subsets: ["latin"],
@@ -23,6 +24,7 @@ export default function RootLayout({
       <body className={`bg-white ${roboto.className}`}>
         <HeaderComponent />
         {children}
+        <FooterComponent />
       </body>
     </html>
   );
